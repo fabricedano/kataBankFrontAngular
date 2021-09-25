@@ -1,0 +1,16 @@
+<div class="create-account-container">
+    <h2>Create account</h2>
+    <span>For create a new bank account, please taped account name below.</span>
+    <form class="create-account-container-form" [formGroup]="form" (ngSubmit)="confirmDialog(form.value)">
+        <div class="create-account-container-form-field">
+            <mat-form-field appearance="fill" class="create-account-container-form-field-mat-form-field">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="create-account-container-form-action">
+            <button mat-button color="primary" (click)="cancelDialog()">CANCEL</button>
+            <button mat-button color="primary" [disabled]='!form.valid' type="submit">CREATE</button>
+        </div>
+    </form>
+</div>

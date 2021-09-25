@@ -1,0 +1,21 @@
+<div class="home-container">
+    <form class="home-container-form" [formGroup]="form">
+        <mat-form-field class="home-container-form-mat-form-field" appearance="fill">
+            <mat-label>Search by Name</mat-label>
+            <input matInput formControlName="search">
+        </mat-form-field>
+    </form>
+    <mat-grid-list cols="{{gridCols | async}}" rowHeight="200px">
+        <mat-grid-tile *ngFor="let account of accounts$ | async">
+            <mat-card class="home-container-mat-card" (click)="goToBalance(account)">
+                <mat-card-header>
+                    <mat-card-title class="home-container-mat-card-title">
+                        <div class="home-container-mat-card-title-name">{{ account.name}} €</div>
+                        <div class="home-container-mat-card-title-solde">{{ account.solde}} €</div>
+                    </mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>                
+    </mat-grid-list>
+    <button mat-fab color="primary" class="home-container-fab" (click)="openDialog()"><span>+</span></button>
+</div>

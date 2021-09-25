@@ -1,0 +1,35 @@
+.login-container {
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &-form {
+        flex-direction: column;
+        display: flex;
+
+
+        &-signup-link {
+            text-align: center;
+            padding-top: 8px;
+
+            a {
+                color: #17479E; 
+            }
+        }
+
+        &-error {
+            text-align: center;
+            padding-top: 8px;
+            span {
+                color: red;
+                font-size: 16px;
+            }
+        }
+        &-submit-btn {
+            background: #17479E;
+            color: white;
+        }
+    }
+
+}

@@ -1,0 +1,105 @@
+.manage-account-container {
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 80px;
+        padding: 22px;
+        font-weight: bold;
+    }
+    form , .new-solde{
+        width: 50%;
+    }
+
+    .new-solde {
+        h3{
+            font-size: 28px;
+        }
+    }
+
+    &-form {
+        &-actions  {
+            margin-left: 32%;
+            width: 330px;
+            mat-form-field{
+                width: 100%;
+            }
+
+            mat-card {
+                cursor: pointer;
+                width: 60%;
+                position: absolute;
+            }
+
+            mat-grid-tile:first-child mat-card{
+                left: 0;
+            }
+            mat-grid-tile:last-child mat-card {
+                right: 0;
+            }
+
+            &-selected {
+                color: white;
+                background-color: #17479E; 
+            }
+        }
+
+        &-accounts {
+            margin-left: 32%;
+            width: 330px;
+            mat-form-field{
+                width: 100%;
+            }
+        }
+
+        &-amount {
+            margin-left: 32%;
+            width: 330px;
+            mat-form-field{
+                width: 100%;
+            }
+        }
+        &-button {
+            margin-left: 32%;
+            width: 330px;
+            &-submit-btn {
+                width: 100%;
+                background: #17479E;
+                color: white;
+            }
+        }
+
+        &-success-message {
+            margin-left: 32%;
+            width: 330px;
+            text-align: center;
+            padding-top: 8px;
+            span {
+                color: green;
+                font-size: 16px;
+            }
+        }
+
+        &-error-message {
+            margin-left: 32%;
+            width: 330px;
+            text-align: center;
+            padding-top: 8px;
+            span {
+                color: red;
+                font-size: 16px;
+            }
+        }
+    }
+    .new-solde {
+
+        h3:first-child {
+            color: red;
+        }
+        h3:last-child {
+            color:  #17479E;
+        }
+        .positive-balance {
+            color: green !important;
+        }
+    }
+}

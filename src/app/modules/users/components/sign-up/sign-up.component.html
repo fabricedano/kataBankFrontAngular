@@ -1,0 +1,28 @@
+<div class="signup-container">
+        <form class="signup-container-form" [formGroup]="form" (ngSubmit)="signUpUser(form.value)">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="address">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="signup-container-form-submit-btn" [disabled]="!form.valid" type="submit">Sign Up</button>
+            <span class="signup-container-form-login-link">You already have an account? <a routerLink="/">Login</a></span>
+            <div class="signup-container-form-success-message" *ngIf="(successCreateAccount$ | async)">
+                <span>Your account has been created</span>
+            </div>
+            <div *ngIf="(errorMessage$ | async) as error" class="signup-container-form-error">
+                <span>{{ error }}</span>
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,34 @@
+.home-container{
+    display: flex;
+    margin-top: 3%;
+    flex-direction: column;
+    &-form {
+        margin: 0 auto;
+        &-mat-form-field{
+            width: 100%;
+        }
+    }
+    &-mat-card{
+        width: 60%;
+        height: 115px;
+        background-color: #17479E;
+        cursor: pointer !important;
+        color: white;
+        &-title{
+            display: flex;
+            flex-direction: row;
+            &-solde{
+                position: absolute;
+                right: 26px;
+            }
+        }
+    }
+    &-fab {
+        right: 4px;
+        bottom: 8px;
+        position: fixed;
+        background-color: #17479E;
+    }
+}
+
+

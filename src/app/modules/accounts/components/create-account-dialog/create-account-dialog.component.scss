@@ -1,0 +1,14 @@
+
+
+.create-account-container{
+    &-form-field{
+        margin-top: 20px;
+        width: 100%;
+        &-mat-form-field{
+            width: 100%;
+        }
+    }
+    &-form-action {
+        float: right;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="manage-account-container">
+    <h1>Welcome Emilin DADIE</h1>
+    <div fxLayout="row">
+        <form [formGroup]="form" (ngSubmit)="updateSolde(form.value)">
+            <div class="manage-account-container-form-actions">
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile *ngFor="let action of actions">
+                    <mat-card [ngClass]="{'manage-account-container-form-actions-selected': selectedAction === action}" (click)="updateSelectedAction(action)">
+                        <mat-card-content>
+                            <h3>
+                            {{ action }}
+                            </h3>
+                        </mat-card-content>
+                    </mat-card>
+                </mat-grid-tile>                
+            </mat-grid-list>
+            </div>
+            <div class="manage-account-container-form-accounts">
+                <mat-form-field>
+                        <mat-label>Account</mat-label>
+                        <mat-select formControlName="account">
+                            <mat-option *ngFor="let account of accounts$ | async" [value]="account"> {{  account.name }}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.get('account').hasError('required')">You must make a selection</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="manage-account-container-form-amount">
+                <mat-form-field appearance="fill" class="manage-account-container-amount-form-field">
+                <mat-label>Amount</mat-label>
+                <input matInput formControlName="amount" type="number">
+                </mat-form-field>
+                <mat-error *ngIf="form.get('amount').hasError('min')">Yout amount must be up to zero €</mat-error>
+                <mat-error *ngIf="form.get('amount').hasError('max')">Yout amount must be down to 1000 €</mat-error>
+            </div>
+            <div class="manage-account-container-form-button">
+                <button mat-raised-button color="primary" class="manage-account-container-form-button-submit-btn" [disabled]="!form.valid" type="submit">Update</button>
+            </div>
+            <div class="manage-account-container-form-success-message" *ngIf="(successCreateOperation$ | async)">
+                <span>The operation have done with success</span>
+            </div>
+            <div class="manage-account-container-form-error-message" *ngIf="(errorMessage$ | async) as error">
+                <span>{{ error }}</span>
+            </div>
+        </form>
+        <div *ngIf="{solde : newSolde$ | async, balance : balance$ | async} as res " class="new-solde" fxLayout="column" fxLayoutAlign="center center">
+            <div *ngIf="res.solde">
+                <h3 [ngClass]="{'positive-balance': res.balance.toString().includes('+')}"> {{ res.balance}} </h3>
+                <h3>New Solde : {{ res.solde }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
