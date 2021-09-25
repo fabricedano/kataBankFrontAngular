@@ -24,11 +24,11 @@ Think of your personal bank account experience When in doubt, go for the simples
 
 
 # Api Dependance with swagger ui
-[BankAccountApiNestJS](https://github.com/emilindadie/BankAccountApiNestJS)
+[bankAPINestJS](https://github.com/fabricedano/bankAPINestJS)
 
 
 # Other Api Dependance
-[BankAccountkataApi](https://github.com/emilindadie/BankAccountKataApi)
+[kataBankAPI](https://github.com/fabricedano/kataBankAPI)
 
 
 # To know
@@ -37,7 +37,7 @@ If you want to use real api call you have to uncomment api call in services.
 
 For access to the complete version (React version) you have to clone the repository link below
 
-[BankAccountkataFront](https://github.com/emilindadie/BankAccountKataFront)
+[kataBankFront](https://github.com/fabricedano/kataBankFront)
 
 # Run app
 ```sh
